@@ -15,6 +15,7 @@ namespace FKTest.Models
         public string Code { get; set; }
         public string Name { get; set; }
         public virtual Parent Parent { get; set; }
+        public string ParentCode { get; set; }
         public Guid ParentId { get; set; }
 
         public class Configuration : IEntityTypeConfiguration<Child>
@@ -26,7 +27,7 @@ namespace FKTest.Models
 
                 builder.HasOne(x => x.Parent)
                     .WithMany(x => x.Children)
-                    .HasForeignKey(x => x.ParentId)
+                    .HasForeignKey(x => x.ParentCode)
                     .IsRequired();
             }
         }
