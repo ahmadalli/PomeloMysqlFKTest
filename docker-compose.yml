@@ -6,6 +6,8 @@ services:
     build:
       context: .
       dockerfile: FKTest/Dockerfile
+    environment:
+      - FKTEST_CONNECTIONSTRINGS__MYSQL=Server=mysql;Database=vpp;User=root;Password=;default command timeout=20;
   mysql:
     image: mysql:5
     volumes:
