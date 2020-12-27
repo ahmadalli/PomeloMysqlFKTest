@@ -3,14 +3,16 @@ using System;
 using FKTest.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace FKTest.Migrations
 {
     [DbContext(typeof(FkDbContext))]
-    partial class FkDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201227210928_ChangeIdColumn")]
+    partial class ChangeIdColumn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

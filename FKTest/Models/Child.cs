@@ -23,11 +23,13 @@ namespace FKTest.Models
             public void Configure(EntityTypeBuilder<Child> builder)
             {
                 builder.ToTable(nameof(Child).Pluralize());
-                builder.HasKey(x => x.Code);
+                builder.HasKey(x => x.Id);
+
+                builder.HasIndex(x => x.Code).IsUnique();
 
                 builder.HasOne(x => x.Parent)
                     .WithMany(x => x.Children)
-                    .HasForeignKey(x => x.ParentCode)
+                    .HasForeignKey(x => x.ParentId)
                     .IsRequired();
             }
         }

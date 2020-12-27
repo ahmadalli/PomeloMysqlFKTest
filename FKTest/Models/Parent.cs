@@ -22,7 +22,9 @@ namespace FKTest.Models
             public void Configure(EntityTypeBuilder<Parent> builder)
             {
                 builder.ToTable(nameof(Parent).Pluralize());
-                builder.HasKey(x => x.Code);
+                builder.HasKey(x => x.Id);
+
+                builder.HasIndex(x => x.Code).IsUnique();
             }
         }
     }
