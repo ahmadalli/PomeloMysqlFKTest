@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "FKTest": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
