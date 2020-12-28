@@ -26,6 +26,9 @@ namespace FKTest.Migrations
                     b.Property<string>("Code")
                         .HasColumnType("varchar(95) CHARACTER SET utf8mb4");
 
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime(6)");
+
                     b.Property<string>("Name")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
 
@@ -53,6 +56,9 @@ namespace FKTest.Migrations
 
                     b.Property<string>("Code")
                         .HasColumnType("varchar(95) CHARACTER SET utf8mb4");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Name")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");

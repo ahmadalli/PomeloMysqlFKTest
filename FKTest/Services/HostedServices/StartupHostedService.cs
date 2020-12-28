@@ -33,6 +33,14 @@ namespace FKTest.Services.HostedServices
 
             _logger.LogInformation("migrating database.");
             await dbContext.Database.MigrateAsync(cancellationToken);
+
+            var childs = await dbContext.Set<Child>()
+                .Where(x=>x.Name.StartsWith("David"))
+                .Where(x=>x.Code.EndsWith("74"))
+                .Where(x=>x.Parent.Code.EndsWith("74"))
+                .Where(x => x.Parent.Created > x.Created - TimeSpan.FromMinutes(30))
+                .OrderBy(x => x.Created)
+                .FirstOrDefaultAsync(cancellationToken);
         }
 
         public Task StopAsync(CancellationToken cancellationToken)

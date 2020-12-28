@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FKTest.Migrations
 {
     [DbContext(typeof(FkDbContext))]
-    [Migration("20201227210928_ChangeIdColumn")]
-    partial class ChangeIdColumn
+    [Migration("20201228085937_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -27,6 +27,9 @@ namespace FKTest.Migrations
 
                     b.Property<string>("Code")
                         .HasColumnType("varchar(95) CHARACTER SET utf8mb4");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Name")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");
@@ -55,6 +58,9 @@ namespace FKTest.Migrations
 
                     b.Property<string>("Code")
                         .HasColumnType("varchar(95) CHARACTER SET utf8mb4");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Name")
                         .HasColumnType("longtext CHARACTER SET utf8mb4");

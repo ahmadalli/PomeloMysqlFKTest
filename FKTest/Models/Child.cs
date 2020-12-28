@@ -17,6 +17,7 @@ namespace FKTest.Models
         public virtual Parent Parent { get; set; }
         public string ParentCode { get; set; }
         public Guid ParentId { get; set; }
+        public DateTime Created { get; set; } = DateTime.Now;
 
         public class Configuration : IEntityTypeConfiguration<Child>
         {

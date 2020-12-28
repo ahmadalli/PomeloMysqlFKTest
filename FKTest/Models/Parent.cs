@@ -14,6 +14,7 @@ namespace FKTest.Models
         public Guid Id { get; set; } = Guid.NewGuid();
         public string Code { get; set; }
         public string Name { get; set; }
+        public DateTime Created { get; set; } = DateTime.Now;
 
         public virtual ICollection<Child> Children { get; set; } = new List<Child>();
 
